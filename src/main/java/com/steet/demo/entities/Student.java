@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.steet.demo.entities.Enums.Topics;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -24,7 +25,6 @@ public class Student extends User {
     private LocalDate dbo;
     @Enumerated(EnumType.STRING)
     private List<Topics> interest;
-    @OneToMany(mappedBy = "student")
+    @OneToMany(mappedBy = "student" ,cascade = CascadeType.REMOVE)
     private Membership membership;
-    
 }

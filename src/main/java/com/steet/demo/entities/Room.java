@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import org.hibernate.annotations.UuidGenerator;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
@@ -28,6 +29,6 @@ public class Room {
     private String name;
     private String description;
     private LocalTime createdAt;
-    @OneToMany()
+    @OneToMany(cascade = CascadeType.REMOVE)
     private List<Message> messages;
 }
