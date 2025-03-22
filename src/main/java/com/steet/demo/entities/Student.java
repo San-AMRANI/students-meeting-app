@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.steet.demo.entities.Enums.Interests;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -26,5 +27,4 @@ public class Student extends User {
     private List<Interests> interest;
     @OneToMany(mappedBy = "student")
     private Membership membership;
-    
 }

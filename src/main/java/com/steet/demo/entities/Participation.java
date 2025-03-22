@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Participation {
 
-     @Id @GeneratedValue(generator = "UUID")
+    @Id @GeneratedValue(generator = "UUID")
     @UuidGenerator
     private UUID id;
     @ManyToOne
