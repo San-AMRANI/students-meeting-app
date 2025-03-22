@@ -1,6 +1,6 @@
 package com.steet.demo.entities.Enums;
 
-public enum Topics {
+public enum Interests {
     MATH,
     SCIENCE,
     HISTORY,

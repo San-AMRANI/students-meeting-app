@@ -13,5 +13,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Admistrator extends User {
     
-    private String department;//department of the administrator
+    private String department;
 }

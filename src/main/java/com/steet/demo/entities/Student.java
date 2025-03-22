@@ -3,7 +3,7 @@ package com.steet.demo.entities;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.steet.demo.entities.Enums.Topics;
+import com.steet.demo.entities.Enums.Interests;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -23,7 +23,7 @@ public class Student extends User {
     private String major;
     private LocalDate dbo;
     @Enumerated(EnumType.STRING)
-    private List<Topics> interest;
+    private List<Interests> interest;
     @OneToMany(mappedBy = "student")
     private Membership membership;
     
