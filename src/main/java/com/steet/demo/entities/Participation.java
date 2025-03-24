@@ -22,10 +22,13 @@ public class Participation {
     @Id @GeneratedValue(generator = "UUID")
     @UuidGenerator
     private UUID id;
+
     @ManyToOne
-    private Student participant;
+    private Student student;
+    
     @ManyToOne
-    private PblcRoom publicRoom;
+    private PubRoom pubRoom;
+    
     private Instant joinedAt;
     private Instant leftAt;
 }

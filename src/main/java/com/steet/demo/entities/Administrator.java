@@ -9,6 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 @AllArgsConstructor
-public class Admistrator extends User {
+public class Administrator extends User {
     
 }

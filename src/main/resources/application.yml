@@ -1,5 +1,15 @@
 server:
-  port: 8080
+  port: 8008
 spring:
   application:
     name: demo
+  datasource:
+    url: jdbc:postgresql://localhost:5432/steet
+    username: postgres
+    password: pstgr-sandev
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true

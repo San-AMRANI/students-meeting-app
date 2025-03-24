@@ -21,16 +21,21 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Membership {
-    @Id @GeneratedValue(generator = "UUID")
+public class Membership{
+    @Id
+    @GeneratedValue(generator = "UUID")
     @UuidGenerator
     private UUID id;
+
     @ManyToOne
     private Student student;
+    
     @ManyToOne
-    private PrvRoom room;
+    private PrvRoom room; // Properly mapped as a Many-to-One relationship
+
     @Enumerated(EnumType.STRING)
-    private Role role;    
+    private Role role;
+
     private boolean isActive;
     private LocalTime joinAt;
     private LocalTime leaveAt;

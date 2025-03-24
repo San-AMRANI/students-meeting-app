@@ -5,12 +5,19 @@ import java.util.UUID;
 
 import org.hibernate.annotations.UuidGenerator;
 
+import com.steet.demo.entities.Enums.MessageType;
+
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 
 @Entity
 @Data
@@ -20,6 +27,16 @@ public class Message {
     @Id @GeneratedValue(generator = "UUID")
     @UuidGenerator
     private UUID id;
-    private User sender ;
-    private Instant sentAt;
+    
+    @ManyToOne
+    private Room room;
+
+    private String sender_id;
+
+    private String content;
+
+    @Enumerated(EnumType.STRING)
+    private MessageType type; // Enum for TEXT/IMAGE
+
+    private Instant timestamp;
 }

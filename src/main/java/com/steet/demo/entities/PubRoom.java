@@ -1,5 +1,7 @@
 package com.steet.demo.entities;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.OneToMany;
 import lombok.AllArgsConstructor;
@@ -12,8 +14,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-public class PblcRoom extends Room {
+public class PubRoom extends Room {
 
-    @OneToMany(mappedBy = "publicRoom")
-    private Participation participation;
+    @OneToMany(mappedBy = "pubRoom")
+    private List<Participation> participation;
 }
