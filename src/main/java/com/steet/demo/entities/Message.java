@@ -31,7 +31,7 @@ public class Message {
     @ManyToOne
     private Room room;
 
-    private String sender_id;
+    private UUID sender_id;
 
     private String content;
 

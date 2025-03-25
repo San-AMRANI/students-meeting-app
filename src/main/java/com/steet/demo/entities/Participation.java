@@ -24,8 +24,8 @@ public class Participation {
     private UUID id;
 
     @ManyToOne
-    private Student student;
-    
+    private Student participant;
+
     @ManyToOne
     private PubRoom pubRoom;
     

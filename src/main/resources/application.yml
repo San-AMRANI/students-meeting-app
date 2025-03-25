@@ -1,8 +1,10 @@
 server:
   port: 8008
+
 spring:
   application:
-    name: demo
+    name: steet
+
   datasource:
     url: jdbc:postgresql://localhost:5432/steet
     username: postgres
@@ -13,3 +15,22 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      locations: classpath:graphql
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false
+
+  # security:
+  #   user:
+  #     name: admin
+  #     password: admin

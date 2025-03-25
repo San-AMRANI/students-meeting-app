@@ -1,5 +1,5 @@
 package com.steet.demo.services.interfaces;
 
-public interface Userservices {
-    
+public interface RoomServiceInt {
+   
 }

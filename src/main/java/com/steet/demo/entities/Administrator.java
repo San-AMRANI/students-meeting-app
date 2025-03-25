@@ -10,5 +10,8 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 public class Administrator extends User {
-    
+   
+      public Administrator(String firstName, String lastName, String username, String email, String password) {
+         super(null, firstName, lastName, username, email, password);
+      }
 }
