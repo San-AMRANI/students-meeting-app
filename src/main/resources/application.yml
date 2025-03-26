@@ -22,14 +22,6 @@ spring:
     schema:
       locations: classpath:graphql
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  security:
-    enabled: false
-
   # security:
   #   user:
   #     name: admin

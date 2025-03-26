@@ -1,5 +1,8 @@
-type Query{
-   students: [Student]
+type Query {
+  students: [Student]
+  studentById(id: ID!): Student
+  studentByEmail(email: String!): Student
+  studentByUserName(userName: String!): Student
 }
 
 # Base User interface
@@ -109,11 +112,24 @@ enum Role {
   MEMBER
 }
 
+enum Majors {
+    COMPUTER_SCIENCE
+    MATHEMATICS
+    PHYSICS
+    CHEMISTRY
+    BIOLOGY
+    HISTORY
+    ART
+}
+
 enum Interests {
-  AI
-  NETWORKING
-  SECURITY
-  WEB_DEVELOPMENT
-  MOBILE_DEVELOPMENT
-  CLOUD_COMPUTING
+    MATH
+    SCIENCE
+    HISTORY
+    LITERATURE
+    ART
+    TECHNOLOGY
+    PHYSICS
+    CHEMISTRY
+    BIOLOGY
 }

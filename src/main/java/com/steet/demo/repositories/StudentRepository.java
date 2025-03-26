@@ -8,7 +8,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.steet.demo.entities.Student;
 
 public interface StudentRepository extends JpaRepository<Student, UUID> {
-    Student findByEmail(String email);
+    Optional<Student> findByEmail(String email);
     Student findByUserName(String userName);
     void deleteById(UUID id);
 }

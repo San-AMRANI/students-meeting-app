@@ -23,6 +23,7 @@ public class DataInitializer {
             PubRoomRepository pubRoomRepository, 
             ParticipationRepository participationRepository,
             MessageRepository messageRepository) {
+                
         return args -> {
             // Create some students
             Student student1 = new Student("John", "Doe", "john.doe", "john.doe@email.com", "password123", Majors.COMPUTER_SCIENCE, LocalDate.of(1995, 5, 15), List.of(Interests.ART, Interests.CHEMISTRY));
