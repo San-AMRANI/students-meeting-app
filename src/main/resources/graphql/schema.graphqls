@@ -1,8 +1,47 @@
 type Query {
+  # Student Queries
   students: [Student]
   studentById(id: ID!): Student
   studentByEmail(email: String!): Student
   studentByUserName(userName: String!): Student
+
+  # Administrator Queries
+  administrators: [Administrator]
+  administratorById(id: ID!): Administrator
+
+  # Guest Queries
+  navigateExplore: String
+  signUp(username: String!, password: String!): String
+
+  # Student Additional Queries
+  signIn(username: String!, password: String!): String
+  joinPublicRoom(roomId: String!): String
+  receiveNotifications: String
+}
+
+type Mutation {
+  # Student Mutations
+  updateStudent(id: ID!, student: StudentInput!): Student
+  deleteStudent(id: ID!): Boolean
+  chat(message: String!): String
+  createPrivateRoom(roomName: String!): String
+  manageProfile(profileData: String!): String
+  reportUser(userId: String!): String
+  acceptInvitation(invitationId: String!): String
+  rejectInvitation(invitationId: String!): String
+
+  # Administrator Mutations
+  createAdministrator(admin: AdministratorInput!): Administrator
+  updateAdministrator(id: ID!, admin: AdministratorInput!): Administrator
+  deleteAdministrator(id: ID!): Boolean
+
+  # Member Mutations
+  shareScreen(roomId: String!): String
+
+  # Moderator Mutations
+  inviteStudents(roomId: String!, studentId: String!): String
+  kickMember(roomId: String!, memberId: String!): String
+  promoteMember(roomId: String!, memberId: String!): String
 }
 
 # Base User interface
@@ -132,4 +171,23 @@ enum Interests {
     PHYSICS
     CHEMISTRY
     BIOLOGY
+}
+
+input StudentInput {
+  firstName: String
+  lastName: String
+  userName: String
+  email: String
+  password: String
+  major: String
+  dob: String
+  interest: [Interests]
+}
+
+input AdministratorInput {
+  firstName: String
+  lastName: String
+  userName: String
+  email: String
+  password: String
 }
